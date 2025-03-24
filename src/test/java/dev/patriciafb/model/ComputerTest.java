@@ -14,7 +14,6 @@ public class ComputerTest {
         double price = 699;
 
         Computer computer = new Computer(brand, memory, cpu, os, price);
-
         assertThat(computador.getMarca(), is(marca));
         assertThat(computador.getMemoria(), is(memoria));
         assertThat(computador.getProcesador(), is(procesador));
