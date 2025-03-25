@@ -41,4 +41,8 @@ public class Store {
         public boolean removeComputerByBrand(String string) {
             return computers.removeIf(computer -> computer.getBrand().equals(string));
         }
+
+        public List<Computer> searchComputerByBrand(String string) {
+            throw new UnsupportedOperationException("Unimplemented method 'searchComputerByBrand'");
+        }
     }

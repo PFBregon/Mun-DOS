@@ -35,4 +35,14 @@ public class StoreTest {
       assertThat(computers.size(), is(1));
       assertThat(computers.get(0).getBrand(), is("HP"));
     }
+
+    @Test
+    void testSearchComputerByBrand() {
+      store.addComputer(new Computer("Dell", 16, "Intel Core i7", "Windows 10", 699));
+      store.addComputer(new Computer("HP", 8, "AMD Ryzen 5", "Windows 10", 499));
+
+      List<Computer> result = store.searchComputerByBrand("Dell");
+      assertThat(result.size(), is(1));
+      assertThat(result.get(0).getBrand(), is("Dell"));
+    }
 }
