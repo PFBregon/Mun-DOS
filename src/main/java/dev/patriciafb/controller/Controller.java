@@ -25,8 +25,7 @@ public class Controller {
     }
 
     public List<Computer> listAllComputers() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'listAllComputers'");
+        return store.listAllComputers();
     }
 
 }
