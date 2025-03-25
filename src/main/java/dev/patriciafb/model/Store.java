@@ -10,14 +10,12 @@ public class Store {
         private String taxId;
         private List<Computer> computers;
 
-
         public Store(String storeName, String owner, String taxId) {
             this.storeName = storeName;
             this.owner = owner;
             this.taxId = taxId;
             this.computers = new ArrayList<>();
         }
-
 
         public String getStoreName() {
             return storeName;
@@ -32,14 +30,11 @@ public class Store {
 
         }
 
-
         public void addComputer(Computer computer) {
-            throw new UnsupportedOperationException("Unimplemented method 'addComputer'");
+            computers.add(computer);
         }
-
 
         public List<Computer> listAllComputers() {
-            throw new UnsupportedOperationException("Unimplemented method 'listAllComputers'");
+            return computers;
         }
     }
-
