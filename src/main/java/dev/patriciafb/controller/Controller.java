@@ -1,5 +1,7 @@
 package dev.patriciafb.controller;
 
+import java.util.List;
+
 import dev.patriciafb.model.Computer;
 import dev.patriciafb.model.Store;
 
@@ -16,6 +18,11 @@ public class Controller {
 
     public boolean removeComputerByBrand(String brand) {
         return store.removeComputerByBrand(brand);
+    }
+
+    public List<Computer> searchComputerByBrand(String string) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'searchComputersByBrand'");
     }
 
 }

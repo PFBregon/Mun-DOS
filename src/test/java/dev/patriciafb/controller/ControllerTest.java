@@ -10,6 +10,9 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.*;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class ControllerTest {
     private Store mockStore;
     private Controller controller;
@@ -33,6 +36,16 @@ public class ControllerTest {
         boolean removed = controller.removeComputerByBrand("Dell");
         assertThat(removed, is(true));
         verify(mockStore).removeComputerByBrand("Dell");
+    }
+
+    @Test
+    void testSearchComputerByBrand() {
+        List<Computer> mockResult = Arrays.asList(new Computer ("Dell", 16, "Intel Core i7", "Windows 10", 699));
+        when(mockStore.searchComputerByBrand("Dell")).thenReturn(mockResult);
+        List<Computer> result = controller.searchComputerByBrand("Dell");
+        assertThat(result.size(), is(1));
+        assertThat(result.get(0).getBrand(), is("Dell"));
+        verify(mockStore).searchComputerByBrand("Dell");
     }
 
 }
