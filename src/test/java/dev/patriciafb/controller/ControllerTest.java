@@ -48,4 +48,19 @@ public class ControllerTest {
         verify(mockStore).searchComputerByBrand("Dell");
     }
 
+    @Test
+    void testListAllComputers() {
+        List<Computer> mockResult = Arrays.asList(
+            new Computer("Dell", 16, "Intel Core i7", "Windows 10", 699),
+            new Computer("HP", 8, "AMD Ryzen 5", "Windows 10", 499)
+        );
+        when (mockStore.listAllComputers()).thenReturn(mockResult);
+        List<Computer> computers = controller.listAllComputers();
+        assertThat(computers.size(), is(2));
+        assertThat(computers.get(0).getBrand(), is("Dell"));
+        assertThat(computers.get(1).getBrand(), is("HP"));
+        verify(mockStore).listAllComputers();
+    }
+
+
 }

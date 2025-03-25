@@ -24,5 +24,10 @@ public class Controller {
         return store.searchComputerByBrand(string);
     }
 
+    public List<Computer> listAllComputers() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'listAllComputers'");
+    }
+
 }
 

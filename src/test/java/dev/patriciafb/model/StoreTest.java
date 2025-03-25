@@ -49,7 +49,7 @@ public class StoreTest {
     @Test
     void testListAllComputers() {
       store.addComputer(new Computer("Dell", 16, "Intel Core i7", "Windows 10", 699));
-      store.addComputer(new Computer("HP", 8, "AMD Ryzen 5", "Linux", 499));
+      store.addComputer(new Computer("HP", 8, "AMD Ryzen 5", "Windows 10", 499));
 
       List<Computer> computers = store.listAllComputers();
 
