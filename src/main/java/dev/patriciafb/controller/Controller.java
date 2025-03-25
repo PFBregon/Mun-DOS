@@ -4,14 +4,14 @@ import dev.patriciafb.model.Computer;
 import dev.patriciafb.model.Store;
 
 public class Controller {
+    private Store store;
 
-    public Controller(Store mockStore) {
-        //TODO Auto-generated constructor stub
+    public Controller(Store store) {
+       this.store = store;
     }
 
     public void addComputer(Computer computer) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addComputer'");
+        store.addComputer(computer);
     }
 
 }

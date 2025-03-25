@@ -4,17 +4,16 @@ import dev.patriciafb.model.Computer;
 import dev.patriciafb.model.Store;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
-import java.util.List;
+import org.mockito.Mockito;
+import static org.mockito.Mockito.*;
 
 public class ControllerTest {
-    private Controller controller;
     private Store mockStore;
+    private Controller controller;
 
     @BeforeEach
     void setUp() {
-        mockStore = new Store("Mun-DOS Store", "Patricia", "123456789");
+        mockStore = Mockito.mock(Store.class);
         controller = new Controller(mockStore);
     }
 
@@ -22,10 +21,7 @@ public class ControllerTest {
     void testAddComputer() {
         Computer computer = new Computer("Dell", 16, "Intel Core i7", "Windows 10", 699);
         controller.addComputer(computer);
-
-        List<Computer> computers = mockStore.listAllComputers();
-        assertThat(computers.size(), is(1));
-        assertThat(computers.get(0).getBrand(), is("Dell"));
+        verify(mockStore).addComputer(computer);
     }
 
 }
