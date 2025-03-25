@@ -24,5 +24,15 @@ public class StoreTest {
         assertThat(computers.size(), is(1));
         assertThat(computers.get(0).getBrand(), is("Dell"));
     }
+    @Test
+    void testRemoveComputerByBrand() {
+      store.addComputer(new Computer("Dell", 16, "Intel Core i7", "Windows 10", 699));
+      store.addComputer(new Computer("HP", 8, "AMD Ryzen 5", "Windows 10", 499));
+      boolean removed = store.removeComputerByBrand("Dell");
 
+      assertThat(removed, is(true));
+      List<Computer> computers = store.listAllComputers();
+      assertThat(computers.size(), is(1));
+      assertThat(computers.get(0).getBrand(), is("HP"));
+    }
 }

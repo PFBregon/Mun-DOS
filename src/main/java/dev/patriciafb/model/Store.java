@@ -37,4 +37,8 @@ public class Store {
         public List<Computer> listAllComputers() {
             return computers;
         }
+
+        public boolean removeComputerByBrand(String string) {
+            throw new UnsupportedOperationException("Unimplemented method 'removeComputerByBrand'");
+        }
     }
