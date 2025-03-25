@@ -28,7 +28,7 @@ public class ControllerTest {
     }
 
     @Test
-    void testRemovecomputerByBrand() {
+    void testRemoveComputerByBrand() {
         when (mockStore.removeComputerByBrand("Dell")).thenReturn(true);
         boolean removed = controller.removeComputerByBrand("Dell");
         assertThat(removed, is(true));

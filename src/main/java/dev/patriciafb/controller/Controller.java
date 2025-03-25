@@ -14,9 +14,8 @@ public class Controller {
         store.addComputer(computer);
     }
 
-    public boolean removeComputerByBrand(String string) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removeComputerByBrand'");
+    public boolean removeComputerByBrand(String brand) {
+        return store.removeComputerByBrand(brand);
     }
 
 }
