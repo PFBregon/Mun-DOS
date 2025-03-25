@@ -43,6 +43,12 @@ public class Store {
         }
 
         public List<Computer> searchComputerByBrand(String string) {
-            throw new UnsupportedOperationException("Unimplemented method 'searchComputerByBrand'");
+            List<Computer> result = new ArrayList<>();
+            for (Computer computer : computers) {
+                if (computer.getBrand().equals(string)) {
+                    result.add(computer);
+                }
+            }
+            return result;
         }
     }
