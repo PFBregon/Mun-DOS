@@ -27,28 +27,24 @@ public class Store {
 
         public String taxId() {
             return taxId;
-
         }
 
         public void addComputer(Computer computer) {
             computers.add(computer);
         }
 
-        public List<Computer> listAllComputers() {
-            return computers;
-        }
-
         public boolean removeComputerByBrand(String string) {
             return computers.removeIf(computer -> computer.getBrand().equals(string));
         }
 
-        public List<Computer> searchComputerByBrand(String string) {
+        public List<Computer> searchComputerByBrand(String brand) {
             List<Computer> result = new ArrayList<>();
             for (Computer computer : computers) {
-                if (computer.getBrand().equals(string)) {
+                if (computer.getBrand().equals(brand)) {
                     result.add(computer);
                 }
             }
             return result;
         }
+
     }
