@@ -10,6 +10,10 @@ public class View {
     private final Controller controller;
     private final Scanner scanner;
 
+    public void start() {
+
+    }
+
     public View(Controller controller, Scanner scanner) {
         this.controller = controller;
         this.scanner = scanner;
@@ -19,7 +23,6 @@ public class View {
         System.out.println(prompt);
         return scanner.nextLine();
         }
-
 
     public void addComputer() {
         System.out.println("Introduzca la marca:");
@@ -42,7 +45,8 @@ public class View {
         boolean removed = controller.removeComputerByBrand(brand);
         if (removed) {
             System.out.println("Ordenador(es) eliminado(s) exitosamente.");
-        } else {
+        }
+        else {
             System.out.println("No se encontraron ordenadores con esa marca.");
         }
     }
@@ -52,7 +56,8 @@ public class View {
         List<Computer> result = controller.searchComputerByBrand(brand);
         if (result.isEmpty()) {
             System.out.println("No se encontraron ordenadores de esa marca.");
-        } else {
+        }
+        else {
             System.out.println("Resultados:");
             for (Computer computer : result) {
                 System.out.println(computer.toString());
@@ -64,12 +69,12 @@ public class View {
         List<Computer> computers = controller.listAllComputers();
         if (computers.isEmpty()) {
             System.out.println("No hay ordenadores en la tienda actualmente.");
-        } else {
-            System.out.println("Lista de computadores:");
+        }
+        else {
+            System.out.println("Lista de ordenadores:");
             for (Computer computer : computers) {
                 System.out.println(computer.toString());
             }
         }
     }
     }
-

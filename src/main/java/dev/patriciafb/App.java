@@ -1,17 +1,17 @@
 package dev.patriciafb;
 
-/**
- * Hello world!
- */
+import dev.patriciafb.view.View;
+
 public final class App {
     private App() {
     }
 
-    /**
-     * Says hello to the world.
-     * @param args The arguments of the program.
-     */
+    public App(View mockView) {
+        //TODO Auto-generated constructor stub
+    }
+
     public static void main(String[] args) {
         System.out.println("Hello World!");
     }
+
 }

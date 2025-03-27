@@ -1,18 +1,15 @@
 package dev.patriciafb;
 
 import org.junit.jupiter.api.Test;
+import dev.patriciafb.view.View;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-/**
- * Unit test for simple App.
- */
 class AppTest {
-    /**
-     * Rigorous Test.
-     */
     @Test
     void testApp() {
-        assertEquals(1, 1);
+        View mockView = mock(View.class);
+        App app = new App(mockView);
+        verify(mockView).start();
     }
 }
