@@ -29,4 +29,9 @@ public class View {
 
         controller.addComputer(new Computer(brand, ram, processor, os, price));
     }
+
+    public void removeComputerByBrand() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'removeComputerByBrand'");
+    }
 }

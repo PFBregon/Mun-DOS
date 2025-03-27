@@ -34,5 +34,12 @@ public class viewTest {
         verify(mockController).addComputer(any(Computer.class));
     }
 
+    @Test
+    void TestRemoveComputerByBrand() {
+        when(mockScanner.nextLine()).thenReturn("Dell");
+        when(mockController.removeComputerByBrand("Dell")).thenReturn(true);
+        view.removeComputerByBrand();
+        verify(mockController).removeComputerByBrand("Dell");
+    }
 };
 
