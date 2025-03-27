@@ -2,16 +2,11 @@ package dev.patriciafb;
 
 import dev.patriciafb.view.View;
 
-public final class App {
-    private App() {
-    }
+public class App {
+    private View view;
 
-    public App(View mockView) {
-        //TODO Auto-generated constructor stub
+    public App(View view) {
+        this.view = view;
+        this.view.start();
     }
-
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
-
 }

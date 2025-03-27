@@ -10,10 +10,6 @@ public class View {
     private final Controller controller;
     private final Scanner scanner;
 
-    public void start() {
-
-    }
-
     public View(Controller controller, Scanner scanner) {
         this.controller = controller;
         this.scanner = scanner;
@@ -76,5 +72,10 @@ public class View {
                 System.out.println(computer.toString());
             }
         }
+    }
+
+    public void start() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'start'");
     }
     }
