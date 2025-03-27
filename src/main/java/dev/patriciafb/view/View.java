@@ -31,7 +31,8 @@ public class View {
     }
 
     public void removeComputerByBrand() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removeComputerByBrand'");
+        System.out.println("Enter brand:");
+        String brand = scanner.nextLine();
+        controller.removeComputerByBrand(brand);
     }
 }
