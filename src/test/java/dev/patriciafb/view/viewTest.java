@@ -41,5 +41,14 @@ public class viewTest {
         view.removeComputerByBrand();
         verify(mockController).removeComputerByBrand("Dell");
     }
+
+    @Test
+    void testSearchComputerByBrand() {
+        when(mockScanner.nextLine()).thenReturn("Dell");
+        List<Computer> mockResult = Arrays.asList(new Computer("Dell", 16, "Intel Core i7", "Windows 10", 699));
+        when(mockController.searchComputerByBrand("Dell")).thenReturn(mockResult);
+        view.searchComputerByBrand();
+        verify(mockController).searchComputerByBrand("Dell");
+    }
 };
 

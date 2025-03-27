@@ -35,4 +35,9 @@ public class View {
         String brand = scanner.nextLine();
         controller.removeComputerByBrand(brand);
     }
+
+    public void searchComputerByBrand() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'searchComputerByBrand'");
+    }
 }
