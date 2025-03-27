@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
@@ -62,6 +63,23 @@ public class viewTest {
         verify(mockController).listAllComputers();
     }
 
+    @Test
+void testReadOption_ValidInput() throws Exception {
+    when(mockScanner.nextLine()).thenReturn("1");
+    java.lang.reflect.Method method = View.class.getDeclaredMethod("readOption");
+    method.setAccessible(true);
+    int option = (int) method.invoke(view);
+    assertEquals(1, option);
+}
 
+@Test
+void testReadOption_InvalidInput() throws Exception {
+    when(mockScanner.nextLine()).thenReturn("abc", "1");
+    int option = -1;
+    while (option == -1) {
+        option = view.readOption();
+    }
+    assertEquals(1, option);
+}
 };
 

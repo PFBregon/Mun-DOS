@@ -61,6 +61,4 @@ public class ControllerTest {
         assertThat(computers.get(1).getBrand(), is("HP"));
         verify(mockStore).listAllComputers();
     }
-
-
 }

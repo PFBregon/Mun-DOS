@@ -75,7 +75,59 @@ public class View {
     }
 
     public void start() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'start'");
+        System.out.println("=== Bienvenido a Mun-DOS ===");
+        while (true) {
+            showMenu();
+            int option = readOption();
+            if (!processOption(option)) {
+                break;
+            }
+        }
+        System.out.println("Gracias por usar nuestro programa. ¡Hasta luego!");
+    }
+
+    private void showMenu() {
+        System.out.println("\n=== Menú de la Tienda ===");
+        System.out.println("1. Agregar ordenador");
+        System.out.println("2. Eliminar ordenador por Marca");
+        System.out.println("3. Buscar ordenador por Marca");
+        System.out.println("4. Ver todos los ordenadores disponibles");
+        System.out.println("5. Salir");
+    }
+
+    int readOption() {
+        while (true){
+        System.out.print("Seleccione una opción: ");
+        String input = scanner.nextLine();
+        try {
+            return Integer.parseInt(input);
+        }
+        catch (NumberFormatException e) {
+            System.out.println("Opción inválida. Por favor, inténtelo de nuevo.");
+        }
+    }
+    }
+
+    private boolean processOption(int option) {
+        switch (option) {
+            case 1:
+                addComputer();
+                break;
+            case 2:
+                removeComputerByBrand();
+                break;
+            case 3:
+                searchComputerByBrand();
+                break;
+            case 4:
+                listAllComputers();
+                break;
+            case 5:
+                System.out.println("Saliendo...");
+                return false;
+            default:
+                System.out.println("Opción inválida. Intente de nuevo.");
+        }
+        return true;
     }
     }
