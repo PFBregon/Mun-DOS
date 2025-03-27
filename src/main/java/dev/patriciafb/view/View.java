@@ -44,7 +44,7 @@ public class View {
     }
 
     public void listAllComputers() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'listAllComputers'");
+        List<Computer> computers = controller.listAllComputers();
+        computers.forEach(System.out::println);
     }
 }
