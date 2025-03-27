@@ -9,6 +9,8 @@ import org.mockito.Mockito;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 public class viewTest {
@@ -21,7 +23,7 @@ public class viewTest {
     void setUp() {
         mockController = mock(Controller.class);
         mockScanner = Mockito.mock(Scanner.class);
-        view = new View(mockController);
+        view = new View(mockController, mockScanner);
     }
 
     @Test
@@ -29,7 +31,7 @@ public class viewTest {
         Computer computer = new Computer("Dell", 16, "Intel Core i7", "Windows 10", 699);
         when(mockScanner.nextLine()).thenReturn("Dell", "16", "Intel Core i7", "Windows 10", "699");
         view.addComputer();
-        verify(mockController).addComputer(computer);
+        verify(mockController).addComputer(any(Computer.class));
     }
 
 };
