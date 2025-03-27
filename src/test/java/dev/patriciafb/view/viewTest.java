@@ -50,5 +50,18 @@ public class viewTest {
         view.searchComputerByBrand();
         verify(mockController).searchComputerByBrand("Dell");
     }
+
+    @Test
+    void testListAllComputers() {
+        List<Computer> mockResult = Arrays.asList(
+                new Computer("Dell", 16, "Intel Core i7", "Windows 10", 699),
+                new Computer("HP", 8, "AMD Ryzen 5", "Windows 10", 499)
+        );
+        when(mockController.listAllComputers()).thenReturn(mockResult);
+        view.listAllComputers();
+        verify(mockController).listAllComputers();
+    }
+
+
 };
 

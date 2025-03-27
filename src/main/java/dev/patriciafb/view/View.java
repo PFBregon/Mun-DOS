@@ -42,4 +42,9 @@ public class View {
         List<Computer> computers = controller.searchComputerByBrand(brand);
         computers.forEach(System.out::println);
     }
+
+    public void listAllComputers() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'listAllComputers'");
+    }
 }
