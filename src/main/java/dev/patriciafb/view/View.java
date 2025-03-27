@@ -13,38 +13,63 @@ public class View {
     public View(Controller controller, Scanner scanner) {
         this.controller = controller;
         this.scanner = scanner;
-    }
+        }
+
+    private String readInput(String prompt) {
+        System.out.println(prompt);
+        return scanner.nextLine();
+        }
+
 
     public void addComputer() {
-        System.out.println("Enter brand:");
+        System.out.println("Introduzca la marca:");
         String brand = scanner.nextLine();
-        System.out.println("Enter RAM:");
+        System.out.println("Introduzca la RAM:");
         int ram = Integer.parseInt(scanner.nextLine());
-        System.out.println("Enter processor:");
+        System.out.println("Introduzca el modelo de CPU:");
         String processor = scanner.nextLine();
-        System.out.println("Enter OS:");
+        System.out.println("Introduzca el sistema operativo:");
         String os = scanner.nextLine();
-        System.out.println("Enter price:");
+        System.out.println("Introduzca el precio:");
         double price = Double.parseDouble(scanner.nextLine());
 
         controller.addComputer(new Computer(brand, ram, processor, os, price));
     }
 
     public void removeComputerByBrand() {
-        System.out.println("Enter brand:");
+        System.out.println("Introduzca la marca:");
         String brand = scanner.nextLine();
-        controller.removeComputerByBrand(brand);
+        boolean removed = controller.removeComputerByBrand(brand);
+        if (removed) {
+            System.out.println("Ordenador(es) eliminado(s) exitosamente.");
+        } else {
+            System.out.println("No se encontraron ordenadores con esa marca.");
+        }
     }
 
     public void searchComputerByBrand() {
-        System.out.println("Enter brand:");
-        String brand = scanner.nextLine();
-        List<Computer> computers = controller.searchComputerByBrand(brand);
-        computers.forEach(System.out::println);
+        String brand = readInput("Introduzca la marca del ordenador que quiere buscar: ");
+        List<Computer> result = controller.searchComputerByBrand(brand);
+        if (result.isEmpty()) {
+            System.out.println("No se encontraron ordenadores de esa marca.");
+        } else {
+            System.out.println("Resultados:");
+            for (Computer computer : result) {
+                System.out.println(computer.toString());
+            }
+        }
     }
 
     public void listAllComputers() {
         List<Computer> computers = controller.listAllComputers();
-        computers.forEach(System.out::println);
+        if (computers.isEmpty()) {
+            System.out.println("No hay ordenadores en la tienda actualmente.");
+        } else {
+            System.out.println("Lista de computadores:");
+            for (Computer computer : computers) {
+                System.out.println(computer.toString());
+            }
+        }
     }
-}
+    }
+
