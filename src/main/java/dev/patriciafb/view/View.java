@@ -37,7 +37,9 @@ public class View {
     }
 
     public void searchComputerByBrand() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'searchComputerByBrand'");
+        System.out.println("Enter brand:");
+        String brand = scanner.nextLine();
+        List<Computer> computers = controller.searchComputerByBrand(brand);
+        computers.forEach(System.out::println);
     }
 }
